@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery Starter</title>
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+  <!-- styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <h1 class="page-title">Catalog</h1>
+
+  <!-- macbook -->
+  <article>
+    <h2 class="section-title">macbook</h2>
+    <section class="section macbook">
+      <img src="./images/macbook-air.jpg" alt="macbook-air" class="img" title="macbook-air">
+      <img src="./images/macbook-pro15.jpg" alt="macbook-pro15.jpg" class="img" title="macbook-pro15.jpg">
+      <img src="./images/macbook-pro16.jpg" alt="macbook-pro16.jpg" class="img" title="macbook-pro16.jpg">
+    </section>
+  </article>
+
+  <!-- iphone -->
+  <article>
+    <h2 class="section-title">iphone</h2>
+    <section class="section iphone">
+      <img src="./images/iphone9.jpg" alt="iphone9" class="img" title="iphone9">
+      <img src="./images/iphone10.jpg" alt="iphone10" class="img" title="iphone10">
+      <img src="./images/iphone11.jpg" alt="iphone11" class="img" title="iphone11">
+      <img src="./images/iphone12.jpg" alt="iphone12" class="img" title="iphone12">
+      <img src="./images/iphone13.jpg" alt="iphone13" class="img" title="iphone13">
+      <img src="./images/iphone14.jpg" alt="iphone14" class="img" title="iphone14">
+    </section>
+  </article>
+
+  <!-- modal -->
+  <div class="modal">
+    <button class="close-btn">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="modal-content">
+      <button class="prev-btn">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+      <!-- content -->
+      <img src="./images/iphone9.jpg" alt="iphone9" class="main-img">
+      <h3 class="image-name">image name</h3>
+      <div class="modal-images">
+        <img class="modal-img" src="./images/iphone9.jpg" alt="iphone9" title="iphone-9">
+        <img class="modal-img" src="./images/iphone10.jpg" alt="iphone10" title="iphone-10">
+       
+      </div>
+
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
