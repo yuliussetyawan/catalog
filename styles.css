@@ -264,3 +264,7 @@ Modal
   transition: var(--transition);
   cursor: pointer;
 }
+
+.modal-img:hover, .modal-img .selected {
+  opacity: 1;
+}

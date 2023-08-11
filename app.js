@@ -20,14 +20,37 @@ class Catalog {
   constructor (element) {
     this.container = element
     this.list = [...element.querySelectorAll('.img')]
+    console.log(this.container)
+    console.log(this.list)
     // target
     this.modal = getElement('.modal')
     this.mainImg = getElement('.main-img')
-    this.imageName = getElement('.image-name')
+    this.imgName = getElement('.image-name')
     this.modalImg = getElement('.modal-images')
     this.closeBtn = getElement('.close-btn')
-    this.nextBtn = getElement('.next-btn');
+    this.nextBtn = getElement('.next-btn')
     this.prevBtn = getElement('.prev-btn')
+    // bind
+    let self = this
+    // container event
+    this.container.addEventListener('click', function (e) {
+      if (e.target.classList.contains('img')) {
+        self.openModal(e.target, self.list)
+      }
+    })
+  }
+  openModal (selectedImage, list) {
+    this.setMainImage(selectedImage)
+    this.modalImg.innerHTML = list
+      .map(function (img) {
+        return `<img src="${img.src}" class="modal-img" alt="${img.alt}" title="${img.title}" />`
+      })
+      .join('')
+    this.modal.classList.add('open')
+  }
+  setMainImage (selectedImage) {
+    this.mainImg.src = selectedImage.src
+    this.imgName.textContent = selectedImage.title
   }
 }
 
