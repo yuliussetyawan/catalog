@@ -33,6 +33,7 @@ class Catalog {
     this.closeModal = this.closeModal.bind(this)
     this.nextImage = this.nextImage.bind(this)
     this.prevImage = this.prevImage.bind(this)
+    this.chooseImage = this.chooseImage.bind(this)
     // container event
     this.container.addEventListener('click', function (e) {
       if (e.target.classList.contains('img')) {
@@ -53,6 +54,7 @@ class Catalog {
     this.closeBtn.addEventListener('click', this.closeModal)
     this.nextBtn.addEventListener('click', this.nextImage)
     this.prevBtn.addEventListener('click', this.prevImage)
+    this.modalImg.addEventListener('click', this.chooseImage)
   }
   setMainImage (selectedImage) {
     this.mainImg.src = selectedImage.src
@@ -63,6 +65,7 @@ class Catalog {
     this.closeBtn.removeEventListener('click', this.closeModal)
     this.nextBtn.removeEventListener('click', this.nextImage)
     this.prevBtn.removeEventListener('click', this.prevImage)
+    this.modalImg.removeEventListener('click', this.chooseImage)
   }
   nextImage () {
     const selected = this.modalImg.querySelector('.selected')
@@ -77,6 +80,14 @@ class Catalog {
     selected.classList.remove('selected')
     prev.classList.add('selected')
     this.setMainImage(prev)
+  }
+  chooseImage (e) {
+   if (e.target.classList.contains('modal-img')){
+    const selected = this.modalImg.querySelector('.selected');
+    selected.classList.remove('selected')
+    e.target.classList.add('selected')
+    this.setMainImage(e.target)
+   }
   }
 }
 
